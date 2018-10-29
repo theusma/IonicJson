@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Os 20 filmes mais populares
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor = 'let filme of lista_filmes'>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/imgs/icon-filme.jpg">
+      </ion-avatar>
+      <h2 class="titulo">{{filme.title}}</h2>
+      <p>{{filme.release_date | date:'d/M/y'}}</p>
+    </ion-item>
+
+    <img [src]="'https://image.tmdb.org/t/p/w300' + filme.backdrop_path">
+
+    <ion-card-content>
+      <p>{{filme.overview}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

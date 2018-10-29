@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor = 'let genero of lista_genero'>
+    <img src="/assets/imgs/moda-original.jpg"/>
+    <div class="card-title">{{genero.name}}</div>
+  </ion-card>
+
+</ion-content>
